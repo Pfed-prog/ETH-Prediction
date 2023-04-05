@@ -7,16 +7,17 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-URL = "https://arweave.net/WFpfNY0gXVxkTCT9aBTqgVlVWlY0WwpcA17G8sGlVSY"
-NAME = "ETH predictions 3"
+URL = "https://arweave.net/VBRTXIlFaVOCSCS_RhrhoLukPevcaF6sRXNeF6fjV30"
+NAME = "ETH predictions 4"
 
-config = ExampleConfig.get_config("https://polygon-rpc.com") # points to Polygon mainnet
-config["BLOCK_CONFIRMATIONS"] = 4 #faster
+config = ExampleConfig.get_config("https://polygon-rpc.com")  # points to Polygon mainnet
+config["BLOCK_CONFIRMATIONS"] = 1  # faster
 ocean = Ocean(config)
 
 alice_private_key = os.getenv('REMOTE_TEST_PRIVATE_KEY1')
 alice_wallet = Wallet(ocean.web3, alice_private_key,
-                       config["BLOCK_CONFIRMATIONS"], config["TRANSACTION_TIMEOUT"])
+                      config["BLOCK_CONFIRMATIONS"], config["TRANSACTION_TIMEOUT"])
+
 assert alice_wallet.web3.eth.get_balance(alice_wallet.address) > 0, "Alice needs MATIC"
 
 # Publish the csv as an Ocean asset, in Polygon

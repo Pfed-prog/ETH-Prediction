@@ -7,11 +7,11 @@ from ocean_lib.web3_internal.wallet import Wallet
 from dotenv import load_dotenv
 load_dotenv()
 
-FILE_NAME = '/home/fedorovn19/github/ETH-Prediction/eth_predict.csv'
+FILE_NAME = './eth_predict.csv'
 
 alice_private_key = os.getenv('REMOTE_TEST_PRIVATE_KEY1')
 
-config = ExampleConfig.get_config("https://polygon-rpc.com") # points to Polygon mainnet
+config = ExampleConfig.get_config("https://polygon-rpc.com")  # points to Polygon mainnet
 config["BLOCK_CONFIRMATIONS"] = 5
 ocean = Ocean(config)
 
