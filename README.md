@@ -1,4 +1,4 @@
-# ETH Price: Round Three
+# ETH Price: Round Four
 
 [The Challenge Readme](https://github.com/oceanprotocol/predict-eth/blob/main/challenges/main4.md)
 
